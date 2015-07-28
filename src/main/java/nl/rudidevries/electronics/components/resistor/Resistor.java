@@ -168,11 +168,35 @@ public class Resistor {
 	}
 	
 	/**
+	 * Get value in Ohms.
+	 * @return
+	 */
+	public int getOhms() {
+		return ohms();
+	}
+	
+	/**
+	 * Get tolerance percentage.
+	 * @return tolerance percentage
+	 */
+	public int tolerance() {
+		return getTolerance();
+	}
+	
+	/**
 	 * Get tolerance percentage.
 	 * @return tolerance percentage
 	 */
 	public int getTolerance() {
 		return stripes.get(3).getTolerance().getPercentage();
+	}
+	
+	/**
+	 * Get resistor label
+	 * @return Resistor label, i.e. 4K7
+	 */
+	public String getLabel() {
+		return toString();
 	}
 	
 	/**
@@ -309,5 +333,13 @@ public class Resistor {
 		}
 		
 		return colorCode;
+	}
+	
+	/**
+	 * Get color codes of stripes in array.
+	 * @return Array of colors
+	 */
+	public Color[] getColorCode() {
+		return colorCode();
 	}
 }
