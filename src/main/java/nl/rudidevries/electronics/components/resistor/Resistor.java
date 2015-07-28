@@ -31,7 +31,7 @@ public class Resistor {
 	 * @param color1 Color of the first stripe.
 	 * @param color2 Color of the second stripe.
 	 * @param color3 Color of the third stripe.
-	 * @param color Color of the fourth stripe.
+	 * @param color4 Color of the fourth stripe.
 	 * @return Resistor.
 	 */
 	public static Resistor getInstance(Color color1, Color color2, Color color3, Color color4) {
@@ -115,7 +115,7 @@ public class Resistor {
 	/**
 	 * Get new resistor instance.
 	 * @param value in Ohms. 
-	 * @param toleranceColor
+	 * @param toleranceColor tolerance color
 	 * @return Resistor
 	 */
 	public static Resistor getInstance(float value, Color toleranceColor) {
@@ -169,7 +169,7 @@ public class Resistor {
 	
 	/**
 	 * Get tolerance percentage.
-	 * @return
+	 * @return tolerance percentage
 	 */
 	public int getTolerance() {
 		return stripes.get(3).getTolerance().getPercentage();
@@ -254,7 +254,7 @@ public class Resistor {
 	
 	/**
 	 * Convert an int value to a resistor label.
-	 * @param value
+	 * @param value resistance in Ohms.
 	 * @return resistor label (i.e. 10k)
 	 */
 	public static String ohmsToLabel(int value) {
@@ -263,7 +263,7 @@ public class Resistor {
 	
 	/**
 	 * Convert a resistor value label to a integer value.
-	 * @param label
+	 * @param label Resistance label, i.e. 4K7
 	 * @return integer value
 	 */
 	public static int labelToOhms(String label) {
