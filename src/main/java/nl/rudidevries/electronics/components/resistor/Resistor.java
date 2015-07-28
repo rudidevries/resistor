@@ -79,7 +79,7 @@ public class Resistor {
 	 * @return Resistor
 	 */
 	public static Resistor getInstance(int value, Color toleranceColor) {
-		return getInstance(value, toleranceColor);
+		return getInstance((float) value, toleranceColor);
 	}
 	
 	/**
@@ -93,13 +93,23 @@ public class Resistor {
 	}
 	
 	/**
-	 * Get new resistor instance. A default tolerance of 5% will be set.
+	 * Get new resistor instance. A default tolerance of 10% will be set.
 	 * 
 	 * @param value Resistance in Label format (i.e. 4K7)
 	 * @return Resistor
 	 */
 	public static Resistor getInstance(float value) {
-		return getInstance(value, Color.GOLD);
+		return getInstance(value, 10);
+	}
+	
+	/**
+	 * Get new resistor instance.
+	 * @param value in Ohms. 
+	 * @param tolerance tolerance percentage.
+	 * @return Resistor
+	 */
+	public static Resistor getInstance(float value, int tolerance) {
+		return getInstance(value, Tolerance.toColor(tolerance));
 	}
 	
 	/**
